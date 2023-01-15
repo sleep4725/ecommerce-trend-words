@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>인기 순위</title>
+        <style>
+            th {
+                border-bottom: 1px solid #444444;
+                padding: 10px;
+                text-align: center;
+                background-color: #bbdefb;
+              }
+        </style>
+    </head>
+    <body>
+        <p>KimJunHyeon</p>
+        <table border="1" style="float:left;">
+            <th>rank</th>
+            {% for ix in range(1, 11)%}
+                <tr>
+                    <td>{{ ix }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% for k in word_list.keys() %}
+            <table border="1" style="float:left;">
+                <th>{{k}}</th>
+                {% for l in word_list[k] %}
+                <tr>
+                    <td>{{l["keyword"]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% endfor %}
+    </body>
+</html>

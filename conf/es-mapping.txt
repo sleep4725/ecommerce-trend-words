@@ -1,0 +1,26 @@
+PUT popular-search-terms
+{
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "properties": {
+      "flag": {
+        "type": "keyword"
+      },
+      "keyword": {
+        "type": "keyword"
+      },
+      "current_rank": {
+        "type": "long"
+      },
+      "search_count": {
+        "type": "long"
+      },
+      "current_time": {
+        "type": "date",
+        "format": "yyyy-mm-dd HH:MM"
+      }
+    }
+  }
+}
